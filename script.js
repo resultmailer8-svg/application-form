@@ -36,8 +36,12 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
         zipCode: document.getElementById('zipCode').value
     };
 
+    const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3002' 
+    : 'https://applyportal.us';
+
     // Send application data to backend server
-    fetch('http://localhost:3000/submit-application', {
+    fetch(`${API_URL}/submit-application`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
