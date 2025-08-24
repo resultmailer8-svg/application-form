@@ -54,8 +54,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
         return response.json();
     })
     .then(data => {
-        alert(data.message || 'Application submitted successfully!');
-        this.reset();
+        window.location.href = '/success.html';
     })
     .catch(error => {
         console.error('Submission error:', error);
