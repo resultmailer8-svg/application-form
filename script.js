@@ -38,9 +38,9 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
 
     const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:3002' 
-    : 'https://applyportal.us';
+    : '/api';  // Change this line to use relative path
 
-    // Send application data to backend server
+    // Then update the fetch call to:
     fetch(`${API_URL}/submit-application`, {
         method: 'POST',
         headers: {
